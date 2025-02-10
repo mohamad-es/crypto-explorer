@@ -6,6 +6,11 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"],
+      "public/*": ["../public/*"] // Add this line to map `public/*` to the `public` folder
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",

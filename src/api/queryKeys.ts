@@ -1,0 +1,5 @@
+const CRYPTO_QUERY_KEY = "crypto"
+const TREND_CRYPTO_QUERY_KEY = "trend_crypto"
+
+
+export {CRYPTO_QUERY_KEY, TREND_CRYPTO_QUERY_KEY}
