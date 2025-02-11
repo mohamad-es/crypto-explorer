@@ -1,3 +1,5 @@
+import LandingHero from "@/features/Landing/components/LandingHero";
+
 const LandingPage = () => {
     // const params = {
     //     vs_currency: "usd",
@@ -17,7 +19,7 @@ const LandingPage = () => {
 
     return (
         <div>
-            Landing Page
+            <LandingHero />
         </div>
     );
 };

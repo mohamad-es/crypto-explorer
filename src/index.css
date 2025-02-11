@@ -1,1 +1,162 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@theme {
+    --color-primary: #0FAE96;
+    --color-secondary: #511281;
+    --color-main: #11011E;
+    --color-pure-black: #000000;
+    --color-light-grey: #EAEAEA;
+    --color-grey-subtitle: #808080;
+    --color-wireframe-grey: #C6C6C6;
+    --color-black-title: #2B2B2B;
+    --color-pure-white: #FFFFFF;
+    --color-light-subtitle: #B6B6B6;
+    --color-light-title: #ECF1F0;
+    --color-green-title: #0D3E36;
+    --color-green-subtitle: #4D625F;
+}
+
+
+@layer components {
+    .heading-1 {
+        @apply text-pure-black;
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 136%;
+    }
+
+    .heading-2 {
+        @apply text-pure-black;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 133%;
+    }
+
+    .heading-3 {
+        @apply text-pure-black;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 122%;
+    }
+
+    .heading-4 {
+        @apply text-pure-black;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 179%;
+    }
+
+    .heading-5 {
+        @apply text-pure-black;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 133%;
+    }
+
+    .heading-6 {
+        @apply text-pure-black;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+    }
+
+    .subtitle-medium-1 {
+        @apply text-pure-black;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 160%;
+    }
+
+    .subtitle-regular-1 {
+        @apply text-pure-black;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 160%;
+    }
+
+    .subtitle-medium-2 {
+        @apply text-pure-black;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 144%;
+    }
+
+    .subtitle-regular-2 {
+        @apply text-pure-black;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 144%;
+    }
+
+    .caption-medium-1 {
+        @apply text-pure-black;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    .caption-regular-1 {
+        @apply text-pure-black;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    .caption-medium-2 {
+        @apply text-pure-black;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 157%;
+    }
+
+    .caption-regular-2 {
+        @apply text-pure-black;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 157%;
+    }
+
+    .label-semibold-1 {
+        @apply text-pure-black;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    .label-medium-1 {
+        @apply text-pure-black;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    .label-semibold-2 {
+        @apply text-pure-black;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 133%;
+    }
+
+    .label-medium-2 {
+        @apply text-pure-black;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 133%;
+    }
+
+    .capitalized-text {
+        @apply text-pure-black;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 89%;
+        font-variant: all-small-caps;
+    }
+}
