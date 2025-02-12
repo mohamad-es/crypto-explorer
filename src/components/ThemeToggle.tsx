@@ -10,9 +10,9 @@ export default function ThemeToggle() {
             className="cursor-pointer"
         >
             {theme === "light" ? (
-                <Moon02Icon className="w-6 h-6 "/>
+                <Moon02Icon color={'black'} className="w-7 h-7"/>
             ) : (
-                <Sun03Icon className="w-6 h-6 "/>
+                <Sun03Icon color={'white'} className="w-7 h-7"/>
             )}
         </button>
     );

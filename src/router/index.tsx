@@ -1,8 +1,10 @@
 import {createBrowserRouter} from "react-router";
 import App from "../App.tsx";
-import LandingPage from "../features/Landing/LandingPage.tsx";
-import AllCryptosPage from "@/features/Crypto/pages/AllCryptosPage.tsx";
-import SingleCryptoPage from "@/features/Crypto/pages/SingleCryptoPage.tsx";
+import WatchListPage from "@/features/watchlist/pages/WatchListPage.tsx";
+import FavoritesPage from "@/features/favorites/pages/FavoritesPage.tsx";
+import SingleCryptoPage from "@/features/market/pages/SingleCryptoPage.tsx";
+import MarketPage from "@/features/market/pages/MarketPage.tsx";
+import LandingPage from "@/features/landing/page/LandingPage.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -14,12 +16,20 @@ export const router = createBrowserRouter([
                 element: <LandingPage/>
             },
             {
-                path: '/crypto',
-                element: <AllCryptosPage/>
+                path: '/market',
+                element: <MarketPage/>
             },
             {
-                path: '/crypto/:crypto_name',
+                path: '/market/:crypto_name',
                 element: <SingleCryptoPage/>
+            },
+            {
+                path: '/watchlist',
+                element: <WatchListPage/>
+            },
+            {
+                path: '/favorites',
+                element: <FavoritesPage/>
             }
         ]
     }

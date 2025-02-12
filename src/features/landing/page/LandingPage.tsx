@@ -1,4 +1,4 @@
-import LandingHero from "@/features/Landing/components/LandingHero";
+import LandingHero from "@/features/landing/components/LandingHero";
 
 const LandingPage = () => {
     // const params = {
@@ -9,13 +9,13 @@ const LandingPage = () => {
     //     sparkline: false
     // }
     //
-    // const {data, isPending, error} = useAllCrypto(params)
+    // const {datas, isPending, error} = useAllCrypto(params)
 
-    // console.log(data)
+    // console.log(datas)
     //
     // if (isPending) return <div>Loading...</div>
     // if (error) return <div>Error: {error.message}</div>
-    // if(data.length === 0) return <div>no item found</div>
+    // if(datas.length === 0) return <div>no item found</div>
 
     return (
         <div>

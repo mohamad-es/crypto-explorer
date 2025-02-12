@@ -1,14 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 @theme {
+    --font-raleway: 'Raleway', sans-serif;
     --color-primary: #0FAE96;
     --color-secondary: #511281;
     --color-main: #11011E;
@@ -26,6 +22,18 @@
 
 
 @layer components {
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        @apply font-raleway;
+    }
+
+
     .heading-1 {
         @apply text-pure-black;
         font-weight: 700;
@@ -62,101 +70,99 @@
     }
 
     .heading-6 {
-        @apply text-pure-black;
         font-weight: 600;
         font-size: 20px;
         line-height: 150%;
     }
 
     .subtitle-medium-1 {
-        @apply text-pure-black;
         font-weight: 500;
         font-size: 18px;
         line-height: 160%;
     }
 
     .subtitle-regular-1 {
-        @apply text-pure-black;
         font-weight: 400;
         font-size: 18px;
         line-height: 160%;
     }
 
     .subtitle-medium-2 {
-        @apply text-pure-black;
         font-weight: 500;
         font-size: 15px;
         line-height: 144%;
     }
 
     .subtitle-regular-2 {
-        @apply text-pure-black;
         font-weight: 400;
         font-size: 15px;
         line-height: 144%;
     }
 
     .caption-medium-1 {
-        @apply text-pure-black;
         font-weight: 500;
         font-size: 16px;
         line-height: 150%;
     }
 
     .caption-regular-1 {
-        @apply text-pure-black;
         font-weight: 400;
         font-size: 16px;
         line-height: 150%;
     }
 
     .caption-medium-2 {
-        @apply text-pure-black;
         font-weight: 500;
         font-size: 14px;
         line-height: 157%;
     }
 
     .caption-regular-2 {
-        @apply text-pure-black;
         font-weight: 400;
         font-size: 14px;
         line-height: 157%;
     }
 
     .label-semibold-1 {
-        @apply text-pure-black;
         font-weight: 600;
         font-size: 16px;
         line-height: 150%;
     }
 
     .label-medium-1 {
-        @apply text-pure-black;
         font-weight: 500;
         font-size: 16px;
         line-height: 150%;
     }
 
     .label-semibold-2 {
-        @apply text-pure-black;
         font-weight: 600;
         font-size: 12px;
         line-height: 133%;
     }
 
     .label-medium-2 {
-        @apply text-pure-black;
         font-weight: 500;
         font-size: 12px;
         line-height: 133%;
     }
 
     .capitalized-text {
-        @apply text-pure-black;
         font-weight: 500;
         font-size: 18px;
         line-height: 89%;
         font-variant: all-small-caps;
+    }
+
+    .bg-pink-purple {
+        background-image: url("assets/img/bg-above-the-fold.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: top center;
+    }
+
+    .btn-success {
+        @apply bg-primary text-white px-5 py-3 rounded-xl cursor-pointer hover:opacity-80 transition-all flex
     }
 }

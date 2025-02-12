@@ -1,18 +1,16 @@
-import {headerData} from "@/features/Landing/data/headerData.ts";
-import {Link} from "react-router";
 import ThemeToggle from "@/components/ThemeToggle.tsx";
+import Logo from "@/layout/components/Logo.tsx";
+import NavItems from "@/layout/components/NavItems.tsx";
+import GithubLink from "@/layout/components/GithubLink.tsx";
 
 const Header = () => {
     return (
-        <div className={'flex justify-between'}>
-            <div>Logo</div>
-            <ul className={'flex gap-4'}>
-                {headerData.navbar.map((item) => (
-                    <li><Link to={item.link}>{item.title}</Link></li>
-                ))}
-            </ul>
-            <div>
+        <div className={'flex justify-between p-7 pb-5'}>
+            <Logo/>
+            <NavItems/>
+            <div className={'flex gap-6'}>
                 <ThemeToggle/>
+                <GithubLink/>
             </div>
         </div>
     );

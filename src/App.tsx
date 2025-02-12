@@ -1,16 +1,10 @@
-import {Outlet} from "react-router";
-import Footer from "./layout/Footer.tsx";
-import Header from "./layout/Header.tsx";
+import Layout from "@/layout/Layout.tsx";
 
 function App() {
 
     return (
-        <div>
-            <Header/>
-            <main className={''}>
-                <Outlet/>
-            </main>
-            <Footer/>
+        <div className={'dark:bg-main min-h-screen overflow-auto'}>
+            <Layout />
         </div>
     )
 }
