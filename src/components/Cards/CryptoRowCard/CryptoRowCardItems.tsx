@@ -1,7 +1,6 @@
 import {Link} from "react-router";
 import {TAllCryptoResponse} from "@/features/market/types/allCryptos.ts";
 import {StarIcon} from "hugeicons-react";
-import CryptoChart from "@/components/Charts/CryptoChart.tsx";
 
 type CryptoRowCardProps = {
     data: TAllCryptoResponse;
@@ -26,9 +25,7 @@ const CryptoRowCardItems = ({data, index}: CryptoRowCardProps) => {
             </div>
             <div className={'col-span-2 font-sans'}>$ {data.current_price}</div>
             <div className={'col-span-2 font-sans'}>{data.price_change_percentage_24h}%</div>
-            <div className={'col-span-2'}>
-                <CryptoChart data={data} />
-            </div>
+            <div className={'col-span-2'}>{data.total_volume}</div>
             <div className={'col-span-1'}>
                 <Link className={'btn-success justify-center'} to={`${data.id}`}>Explore</Link>
             </div>
