@@ -1,3 +1,3 @@
 export const marketData = {
-    title: "Cryptocurrency market",
+    title: "Top Tokens in Market",
 }

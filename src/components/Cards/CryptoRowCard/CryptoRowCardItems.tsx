@@ -1,34 +1,41 @@
-import {Link} from "react-router";
+import {useNavigate} from "react-router";
 import {TAllCryptoResponse} from "@/features/market/types/allCryptos.ts";
-import {StarIcon} from "hugeicons-react";
+import {numberSeparator} from "@/utils/numberSeparator.ts";
+import {ArrowDownRight01Icon, ArrowUpRight01Icon} from "hugeicons-react";
 
 type CryptoRowCardProps = {
     data: TAllCryptoResponse;
-    index: number;
 }
 
-const CryptoRowCardItems = ({data, index}: CryptoRowCardProps) => {
+const CryptoRowCardItems = ({data}: CryptoRowCardProps) => {
+    const navigate = useNavigate();
     return (
-        <div key={data.id}
-             className={'grid grid-cols-12 items-center py-2 px-8 last-of-type:border-none border-b border-light-grey'}>
-            <div className={'font-sans grid grid-cols-2 items-center pe-4'}>
-                {index + 1}
-                <div className={'cursor-pointer'}><StarIcon size={20}/></div>
-            </div>
-            <div className={'flex items-center gap-5 col-span-4'}>
-                <img width={40} height={40} src={data.image} alt={data.name}/>
-                <div className={'flex gap-5 subtitle-regular-1'}>
-                    {data.name}
-                    <span className={'text-grey-subtitle'}>|</span>
-                    <span className={'uppercase'}>{data.symbol}</span>
+        <div
+            key={data.id}
+            onClick={() => navigate(`${data.id}`)}
+            className={'grid grid-cols-12 font-sans items-center py-4 px-6 last-of-type:border-none border-light-grey transition-all hover:bg-gray-50 dark:hover:bg-main cursor-pointer'}>
+            <div className={'flex items-center gap-3 col-span-4'}>
+                <img width={24} height={24} src={data.image} alt={data.name}/>
+                <div className={'flex items-center gap-2'}>
+                    <span className={'uppercase label-semibold-1'}>{data.symbol}</span>
+                    <span className={'text-grey-subtitle caption-medium-2'}>{data.name}</span>
                 </div>
             </div>
-            <div className={'col-span-2 font-sans'}>$ {data.current_price}</div>
-            <div className={'col-span-2 font-sans'}>{data.price_change_percentage_24h}%</div>
-            <div className={'col-span-2'}>{data.total_volume}</div>
-            <div className={'col-span-1'}>
-                <Link className={'btn-success justify-center'} to={`${data.id}`}>Explore</Link>
+            <div className={'col-span-2'}>${numberSeparator(data.current_price)}</div>
+            <div
+                className={`col-span-2 `}>
+                {data.price_change_percentage_24h.toString().charAt(0) === '-' ?
+                    <span className={'flex items-center gap-2 text-red-500 dark:text-red-400'}>
+                    <ArrowDownRight01Icon size={18}/>
+                        {data.price_change_percentage_24h}%</span> :
+                    <span className={'flex items-center gap-2 text-green-600 dark:text-green-400'}>
+                         <ArrowUpRight01Icon size={18}/>
+                        +{data.price_change_percentage_24h}%
+                    </span>}
+
             </div>
+            <div className={'col-span-2'}>{numberSeparator(data.total_volume)}</div>
+            <div className={'col-span-2'}>{numberSeparator(data.market_cap)}</div>
         </div>
     );
 };

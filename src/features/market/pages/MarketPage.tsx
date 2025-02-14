@@ -25,7 +25,7 @@ const MarketPage = () => {
 
     return (
         <div className={'px-7 mt-10'}>
-            <h1 className={'heading-3 text-green-title dark:text-light-title mb-4'}>{marketData.title}</h1>
+            <h1 className={'heading-3 text-green-title dark:text-light-title mb-10'}>{marketData.title}</h1>
             <CryptoRowCard cryptoData={data}/>
         </div>
     );

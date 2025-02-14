@@ -2,15 +2,11 @@ import {HeaderItemsProps} from "@/components/Cards/CryptoRowCard/index.tsx";
 
 const headerItems: HeaderItemsProps[] = [
     {
-        title: 'No',
-        colSpan: 1,
-    },
-    {
         title: 'Name',
         colSpan: 4,
     },
     {
-        title: 'Last Price',
+        title: 'Price',
         colSpan: 2,
     },
     {
@@ -18,21 +14,21 @@ const headerItems: HeaderItemsProps[] = [
         colSpan: 2,
     },
     {
-        title: "Market Stats",
+        title: '24h Volume',
         colSpan: 2,
     },
     {
-        title: 'Explore',
-        colSpan: 1,
-    }
+        title: 'Market Cap',
+        colSpan: 2,
+    },
 ]
 
 const CryptoRowCardHeader = () => {
     return (
         <div
-            className={'grid grid-cols-12 items-center py-5 px-8 last-of-type:border-none border-b border-light-grey'}>
+            className={'grid grid-cols-12 items-center py-5 px-8 last-of-type:border-none border-b border-light-grey dark:border-main'}>
             {headerItems.map((headerItem) => (
-                <div className={`col-span-${headerItem.colSpan} caption-medium-1 text-grey-subtitle`} key={headerItem.title}>{headerItem.title}</div>
+                <div className={`col-span-${headerItem.colSpan} label-semibold-2 text-grey-subtitle`} key={headerItem.title}>{headerItem.title}</div>
             ))}
         </div>
     );

@@ -14,10 +14,10 @@ type CryptoRowCardProps = {
 const CryptoRowCard = ({cryptoData}: CryptoRowCardProps) => {
 
     return (
-        <div className={'border border-light-grey bg-white rounded-lg'}>
+        <div className={'border border-light-grey bg-white dark:border-main dark:bg-[#160622] dark:text-light-grey rounded-xl'}>
             <CryptoRowCardHeader/>
-            {cryptoData?.map((crypto, index) => (
-                <CryptoRowCardItems key={crypto.id} data={crypto} index={index}/>
+            {cryptoData?.map((crypto) => (
+                <CryptoRowCardItems key={crypto.id} data={crypto} />
             ))}
         </div>
     );

@@ -1,8 +1,8 @@
-import {LineChart, Line, AreaChart, YAxis, XAxis, CartesianGrid, Tooltip, Area} from "recharts";
+import {AreaChart, Area} from "recharts";
 import {TSingleCryptoResponse} from "@/features/market/types/singleCrypto.ts";
 
 type CryptChartProps = {
-    data: TSingleCryptoResponse;
+    data: TSingleCryptoResponse | undefined;
 };
 
 const CryptoChart = ({data}: CryptChartProps) => {
