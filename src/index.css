@@ -33,6 +33,9 @@
         @apply font-raleway;
     }
 
+    .container {
+        @apply !max-w-[1440px]
+    }
 
     .heading-1 {
         @apply text-pure-black;

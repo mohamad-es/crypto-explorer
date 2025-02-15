@@ -5,7 +5,7 @@ import GithubLink from "@/layout/components/GithubLink.tsx";
 
 const Header = () => {
     return (
-        <div className={'flex justify-between p-7 pb-5'}>
+        <div className={'flex container mx-auto justify-between p-7 pb-5'}>
             <Logo/>
             <NavItems/>
             <div className={'flex gap-6'}>

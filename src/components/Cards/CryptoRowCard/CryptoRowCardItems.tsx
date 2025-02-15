@@ -23,7 +23,7 @@ const CryptoRowCardItems = ({data}: CryptoRowCardProps) => {
             </div>
             <div className={'col-span-2'}>${numberSeparator(data.current_price)}</div>
             <div
-                className={`col-span-2 `}>
+                className={`col-span-2`}>
                 {data.price_change_percentage_24h.toString().charAt(0) === '-' ?
                     <span className={'flex items-center gap-2 text-red-500 dark:text-red-400'}>
                     <ArrowDownRight01Icon size={18}/>
