@@ -1,7 +1,7 @@
 import {createBrowserRouter} from "react-router";
 import App from "../App.tsx";
 import FavoritesPage from "@/features/favorites/pages/FavoritesPage.tsx";
-import SingleCryptoPage from "@/features/market/pages/SingleCryptoPage.tsx";
+import SingleCryptoPage from "@/features/crypto/SingleCryptoPage.tsx";
 import MarketPage from "@/features/market/pages/MarketPage.tsx";
 import LandingPage from "@/features/landing/page/LandingPage.tsx";
 

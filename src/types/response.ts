@@ -4,5 +4,9 @@ type THistoricalPriceResponse = {
     total_volumes: string[][]
 }
 
+type TCryptoMetaData = {
+
+}
+
 
 export type {THistoricalPriceResponse}

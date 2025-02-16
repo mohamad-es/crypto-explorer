@@ -1,4 +1,3 @@
-const ALL_CRYPTOS_URL = '/coins/markets'
-const SINGLE_CRYPTO_URL = '/coins'
+const CRYPTO_METADATA_URL = "/asset/v2/metadata"
 
-export {ALL_CRYPTOS_URL, SINGLE_CRYPTO_URL}
+export {CRYPTO_METADATA_URL}
