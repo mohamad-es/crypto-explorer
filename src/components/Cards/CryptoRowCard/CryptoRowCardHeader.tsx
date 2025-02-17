@@ -28,7 +28,7 @@ const CryptoRowCardHeader = () => {
         <div
             className={'grid grid-cols-12 items-center py-5 px-8 last-of-type:border-none border-b border-light-grey dark:border-main'}>
             {headerItems.map((headerItem) => (
-                <div className={`col-span-${headerItem.colSpan} label-semibold-2 text-grey-subtitle`} key={headerItem.title}>{headerItem.title}</div>
+                <div className={`col-span-${headerItem.colSpan} text-grey-subtitle dark:text-light-subtitle caption-medium-1`} key={headerItem.title}>{headerItem.title}</div>
             ))}
         </div>
     );

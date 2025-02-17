@@ -1,6 +1,6 @@
-import {TAllCryptoResponse} from "@/features/market/types/allCryptos.ts";
 import CryptoRowCardItems from "@/components/Cards/CryptoRowCard/CryptoRowCardItems.tsx";
 import CryptoRowCardHeader from "@/components/Cards/CryptoRowCard/CryptoRowCardHeader.tsx";
+import {TCryptoResponse} from "@/types/response.ts";
 
 export type HeaderItemsProps = {
     title: string;
@@ -8,16 +8,16 @@ export type HeaderItemsProps = {
 }
 
 type CryptoRowCardProps = {
-    cryptoData: TAllCryptoResponse[] | undefined;
+    cryptoData: TCryptoResponse[] | undefined;
 }
 
 const CryptoRowCard = ({cryptoData}: CryptoRowCardProps) => {
 
     return (
-        <div className={'border border-light-grey bg-white dark:border-main dark:bg-[#160622] dark:text-light-grey rounded-xl'}>
+        <div className={'border border-light-grey bg-white dark:border-white/5 dark:bg-[#160622] dark:text-light-grey rounded-lg'}>
             <CryptoRowCardHeader/>
             {cryptoData?.map((crypto) => (
-                <CryptoRowCardItems key={crypto.id} data={crypto} />
+                <CryptoRowCardItems key={crypto.ID} data={crypto} />
             ))}
         </div>
     );
