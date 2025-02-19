@@ -14,7 +14,7 @@ const CryptoColumnCard = ({data, cryptoName}: CryptoColumnCardProps) => {
             <div
                 className={'flex mx-5 items-center border-b border-b-light-grey dark:border-b-light-grey/5 pb-4 gap-3.5'}>
                 <img src={data.LOGO_URL} width={50} height={50} alt={data.NAME}/>
-                <div className={'capitalized-text text-main font-semibold'}>{cryptoName}</div>
+                <div className={'capitalized-text text-main font-semibold dark:text-light-title'}>{cryptoName}</div>
                 <div
                     className={'bg-light-grey dark:bg-wireframe-grey dark:text-main text-[10px] font-semibold px-1.5 py-1 rounded-md'}>{data.NAME}</div>
                 <div className={'ms-auto rounded-full p-1'}>
@@ -23,7 +23,7 @@ const CryptoColumnCard = ({data, cryptoName}: CryptoColumnCardProps) => {
                 </div>
             </div>
             <div className={'flex gap-10 justify-between px-5 font-sans mt-4'}>
-                <h4 className={'heading-5 text-main'}>${numberSeparator(Number(data.PRICE_USD).toFixed(2))}</h4>
+                <h4 className={'heading-5 text-main dark:text-light-title'}>${numberSeparator(Number(data.PRICE_USD).toFixed(2))}</h4>
                 <p className={`subtitle-medium-1 text-grey-subtitle mt-1 `}>
                     {data.SPOT_MOVING_24_HOUR_CHANGE_PERCENTAGE_USD.toString().charAt(0) === '-' ?
                         <span className={'text-red-500 gap-2 flex items-center'}>

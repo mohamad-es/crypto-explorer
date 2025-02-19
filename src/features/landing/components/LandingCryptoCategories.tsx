@@ -3,16 +3,19 @@ import RenderState from "@/utils/RenderState.tsx";
 import CryptoRowCard from "@/components/Cards/CryptoRowCard";
 import {landingData} from "@/features/landing/landingData.tsx";
 import {Link} from "react-router";
+import {useState} from "react";
 import {TTopListParams} from "@/types/response.ts";
 
 
-const params: TTopListParams = {
-    page: 1,
-    page_size: 10,
-    groups: 'BASIC,PRICE,CHANGE,MKT_CAP,VOLUME'
-}
-
 const LandingCryptoCategories = () => {
+    const [params, setParams] = useState<TTopListParams>({
+        page: 1,
+        page_size: 10,
+        groups: 'BASIC,PRICE,CHANGE,MKT_CAP,VOLUME',
+        asset_industry: "",
+        sort_direction: "DESC"
+    })
+
     const {data, error, isPending} = useTopList(params)
 
     return (
@@ -22,7 +25,14 @@ const LandingCryptoCategories = () => {
             <div className={'flex flex-wrap gap-3 mb-4'}>
                 {landingData.categories.categories.map((category) => (
                     <button
-                        className={'border bg-white dark:bg-main/50 dark:border-white/5 dark:text-light-subtitle border-light-grey text-grey-subtitle caption-regular-1 cursor-pointer transition-all hover:shadow rounded-lg px-3 py-2'}>{category.title}</button>
+                        onClick={
+                            () => {
+                                setParams((prevState) =>
+                                    ({...prevState, [category.param]: category.name,}))
+                            }}
+                        className={"border bg-white dark:bg-main/50 dark:border-white/5 dark:text-light-subtitle border-light-grey text-grey-subtitle caption-regular-1 cursor-pointer transition-all hover:shadow rounded-lg px-3 py-2"}>
+                        {category.title}
+                    </button>
                 ))}
             </div>
 

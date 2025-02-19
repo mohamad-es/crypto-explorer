@@ -44,10 +44,19 @@ export const landingData = {
         description: 'Cryptocurrencies categories',
         categories: [
             {
-                title: 'Popular'
+                param:"sort_by",
+                name:'PRICE_USD',
+                title: 'Price',
             },
             {
-                title: 'Metaverse'
+                param: "asset_industry",
+                name: "METAVERSE",
+                title: "Metaverse",
+            },
+            {
+                param: "asset_industry",
+                name: "GAMING",
+                title: "Gaming",
             },
         ],
         link: {

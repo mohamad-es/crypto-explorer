@@ -161,7 +161,7 @@
     .bg-pink-purple {
         background-image: url("assets/img/bg-above-the-fold.png");
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
         background-position: top center;
     }

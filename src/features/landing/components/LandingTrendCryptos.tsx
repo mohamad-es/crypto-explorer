@@ -17,7 +17,7 @@ const LandingTrendCryptos = () => {
     return (
         <RenderState isPending={isPending} error={error} data={data}>
             <div className={'container mx-auto mt-28'}>
-                <h2 className={'heading-4 mb-6'}>{landingData.trend.title}</h2>
+                <h2 className={'heading-4 mb-6 text-green-title dark:text-light-title'}>{landingData.trend.title}</h2>
                 <div className={'grid grid-cols-4 gap-7 '}>
                     {data && Object.entries(data.Data).map(([key, value]) => (
                         <CryptoColumnCard key={key} cryptoName={key} data={value}/>

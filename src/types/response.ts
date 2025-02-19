@@ -94,8 +94,8 @@ type TTopListParams = {
     sort_direction?: string;
     groups?: string;
     toplist_quote_asset?: string;
-    assets_type?: string;
-    assets_industry?: string
+    asset_type?: string;
+    asset_industry?: string
 }
 
 type TTopListSearchParams = {
