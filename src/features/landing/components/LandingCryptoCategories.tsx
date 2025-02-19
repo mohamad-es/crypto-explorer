@@ -3,9 +3,17 @@ import RenderState from "@/utils/RenderState.tsx";
 import CryptoRowCard from "@/components/Cards/CryptoRowCard";
 import {landingData} from "@/features/landing/landingData.tsx";
 import {Link} from "react-router";
+import {TTopListParams} from "@/types/response.ts";
+
+
+const params: TTopListParams = {
+    page: 1,
+    page_size: 10,
+    groups: 'BASIC,PRICE,CHANGE,MKT_CAP,VOLUME'
+}
 
 const LandingCryptoCategories = () => {
-    const {data, error, isPending} = useTopList()
+    const {data, error, isPending} = useTopList(params)
 
     return (
         <div className={'container mx-auto mt-32'}>

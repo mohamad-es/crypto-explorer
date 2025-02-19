@@ -1,7 +1,6 @@
 import {createBrowserRouter} from "react-router";
 import App from "../App.tsx";
 import FavoritesPage from "@/features/favorites/pages/FavoritesPage.tsx";
-import SingleCryptoPage from "@/features/crypto/SingleCryptoPage.tsx";
 import MarketPage from "@/features/market/pages/MarketPage.tsx";
 import LandingPage from "@/features/landing/page/LandingPage.tsx";
 
@@ -17,10 +16,6 @@ export const router = createBrowserRouter([
             {
                 path: '/market',
                 element: <MarketPage/>
-            },
-            {
-                path: '/market/:crypto_name',
-                element: <SingleCryptoPage/>
             },
             {
                 path: '/favorites',

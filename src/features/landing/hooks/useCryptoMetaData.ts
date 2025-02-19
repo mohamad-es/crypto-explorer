@@ -1,6 +1,5 @@
 import {useCustomQuery} from "@/hooks/react-query/useCustomQuery.ts";
 import {TMetaDataResponse, TResponse} from "@/types/response.ts";
-import {METADATA_URL} from "@/api/endpoints.ts";
 
 type useCryptoMetaData =
     {
@@ -14,7 +13,7 @@ type useCryptoMetaData =
 
 export const useCryptoMetaData = ({params}: useCryptoMetaData) => {
     return useCustomQuery<TResponse<TMetaDataResponse>>({
-        url: METADATA_URL,
+        url: import.meta.env.VITE_METADATA_URL,
         queryKey: [params.assets],
         params,
     })

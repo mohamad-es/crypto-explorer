@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-    baseURL: "https://data-api.cryptocompare.com",
+    baseURL:import.meta.env.VITE_BASE_URL,
 })

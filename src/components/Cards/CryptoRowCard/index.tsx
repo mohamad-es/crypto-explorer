@@ -12,7 +12,7 @@ type CryptoRowCardProps = {
 }
 
 const CryptoRowCard = ({cryptoData}: CryptoRowCardProps) => {
-
+    console.log(cryptoData,'slm');
     return (
         <div className={'border border-light-grey bg-white dark:border-white/5 dark:bg-[#160622] dark:text-light-grey rounded-lg'}>
             <CryptoRowCardHeader/>

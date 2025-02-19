@@ -29,6 +29,10 @@
         padding: 0;
     }
 
+    *:focus, *:focus-visible {
+        outline: none;
+    }
+
     body {
         @apply font-raleway;
     }
@@ -38,35 +42,31 @@
     }
 
     .heading-1 {
-        @apply text-pure-black;
         font-weight: 700;
         font-size: 72px;
         line-height: 136%;
     }
 
     .heading-2 {
-        @apply text-pure-black;
         font-weight: 700;
         font-size: 48px;
         line-height: 133%;
     }
 
     .heading-3 {
-        @apply text-pure-black;
+        @apply  text-green-title dark:text-light-title;
         font-weight: 700;
         font-size: 36px;
         line-height: 122%;
     }
 
     .heading-4 {
-        @apply text-pure-black;
         font-weight: 600;
         font-size: 28px;
         line-height: 179%;
     }
 
     .heading-5 {
-        @apply text-pure-black;
         font-weight: 600;
         font-size: 24px;
         line-height: 133%;
@@ -85,6 +85,7 @@
     }
 
     .subtitle-regular-1 {
+        @apply text-green-subtitle dark:text-light-subtitle;
         font-weight: 400;
         font-size: 18px;
         line-height: 160%;

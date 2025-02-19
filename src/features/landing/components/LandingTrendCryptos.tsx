@@ -10,7 +10,7 @@ const LandingTrendCryptos = () => {
             assets: 'BTC,ETH,XRP,USDT',
             quote_asset: 'USD',
             asset_lookup_priority: 'SYMBOL',
-            groups: 'BASIC,PRICE'
+            groups: 'BASIC,PRICE,CHANGE'
         }
     })
 
@@ -20,7 +20,7 @@ const LandingTrendCryptos = () => {
                 <h2 className={'heading-4 mb-6'}>{landingData.trend.title}</h2>
                 <div className={'grid grid-cols-4 gap-7 '}>
                     {data && Object.entries(data.Data).map(([key, value]) => (
-                        <CryptoColumnCard key={key} data={value}/>
+                        <CryptoColumnCard key={key} cryptoName={key} data={value}/>
                     ))}
                 </div>
             </div>
