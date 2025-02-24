@@ -1,33 +1,26 @@
-import { TCryptoResponse, TTopListSearchParams } from "@/types/response.ts";
+import { TTopListSearchParams } from "@/types/response.ts";
 import { Search01Icon } from "hugeicons-react";
 import { useSearch } from "@/hooks/useSearch.tsx";
-import { Dispatch, Fragment, RefObject, SetStateAction, useImperativeHandle, useState } from "react";
+import { Dispatch, Fragment, SetStateAction, useState } from "react";
 import Modal from "@/components/Modal.tsx";
 import MinRowCard from "@/components/Cards/MinRowCard.tsx";
+import RenderState from "@/utils/RenderState";
 
 type SearchProps = {
   params: TTopListSearchParams;
   setParams: Dispatch<SetStateAction<TTopListSearchParams>>;
-  ref: RefObject<{ list: TCryptoResponse[] | undefined } | null>;
 };
 
-const Search = ({ params, setParams, ref }: SearchProps) => {
+const Search = ({ params, setParams }: SearchProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const { data, isPending, error } = useSearch(params);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        list: data?.Data.LIST,
-      };
-    },
-    [data]
-  );
-
   return (
     <Fragment>
-      <button className="border border-light-grey cursor-pointer transition-all bg-light-grey py-2 px-5 rounded-lg" onClick={()=>setIsOpen(true)}>Search</button>
+      <button className="btn-success items-center gap-3 mb-3 ms-auto px-4" onClick={() => setIsOpen(true)}>
+        <Search01Icon size={20} />
+        Search
+      </button>
       <Modal
         isOpen={isOpen}
         onClose={() => {
@@ -47,14 +40,13 @@ const Search = ({ params, setParams, ref }: SearchProps) => {
             onChange={(e) => setParams({ ...params, search_string: e.target.value })}
           />
         </div>
+
         <div className={"mt-10 h-80 overflow-auto"}>
-          {isPending ? (
-            <div>Loading ...</div>
-          ) : data?.Data.LIST.length === 0 ? (
-            <div>No item found</div>
-          ) : (
-            data?.Data.LIST.map((item) => <MinRowCard data={item} key={item.ID} />)
-          )}
+          <RenderState isPending={isPending} data={data} error={error}>
+            {data?.Data.LIST.map((item) => (
+              <MinRowCard data={item} key={item.ID} />
+            ))}
+          </RenderState>
         </div>
       </Modal>
     </Fragment>
