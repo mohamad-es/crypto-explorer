@@ -12,7 +12,7 @@ const CryptoRowCardItems = ({ data }: CryptoRowCardProps) => {
   return (
     <div
       key={data.ID}
-      onClick={() => navigate(`/market/${data.NAME}`)}
+      onClick={() => navigate(`/market/${data.SYMBOL}`)}
       className={
         "grid grid-cols-12 caption-regular-1 text-black-title dark:text-light-subtitle font-sans items-center py-2 border-b dark:border-b-white/5 border-b-light-grey px-6 last-of-type:border-none border-light-grey transition-all hover:bg-gray-50 dark:hover:bg-main cursor-pointer"
       }
@@ -24,37 +24,23 @@ const CryptoRowCardItems = ({ data }: CryptoRowCardProps) => {
           <span className={""}>{data.NAME}</span>
         </div>
       </div>
-      <div className={"col-span-2"}>
-        ${numberSeparator(Number(data.PRICE_USD).toFixed(2))}
-      </div>
+      <div className={"col-span-2"}>${numberSeparator(Number(data.PRICE_USD).toFixed(2))}</div>
       <div className={`col-span-2`}>
-        {data.SPOT_MOVING_24_HOUR_CHANGE_PERCENTAGE_USD.toString().charAt(0) ===
-        "-" ? (
-          <span
-            className={"flex items-center gap-2 text-red-500 dark:text-red-400"}
-          >
+        {data.SPOT_MOVING_24_HOUR_CHANGE_PERCENTAGE_USD.toString().charAt(0) === "-" ? (
+          <span className={"flex items-center gap-2 text-red-500 dark:text-red-400"}>
             <ArrowDown02Icon size={18} />
             {Number(data.SPOT_MOVING_24_HOUR_CHANGE_PERCENTAGE_USD).toFixed(2)}%
           </span>
         ) : (
-          <span
-            className={
-              "flex items-center gap-2 text-green-600 dark:text-green-400"
-            }
-          >
-            <ArrowUp02Icon size={18} />+
-            {Number(data.SPOT_MOVING_24_HOUR_CHANGE_PERCENTAGE_USD).toFixed(2)}%
+          <span className={"flex items-center gap-2 text-green-600 dark:text-green-400"}>
+            <ArrowUp02Icon size={18} />+{Number(data.SPOT_MOVING_24_HOUR_CHANGE_PERCENTAGE_USD).toFixed(2)}%
           </span>
         )}
       </div>
       <div className={"col-span-2"}>
-        {numberSeparator(
-          Number(data.SPOT_MOVING_24_HOUR_QUOTE_VOLUME_DIRECT_USD).toFixed(2),
-        )}
+        {numberSeparator(Number(data.SPOT_MOVING_24_HOUR_QUOTE_VOLUME_DIRECT_USD).toFixed(2))}
       </div>
-      <div className={"col-span-2"}>
-        {numberSeparator(Number(data.TOTAL_MKT_CAP_USD).toFixed(2))}
-      </div>
+      <div className={"col-span-2"}>{numberSeparator(Number(data.TOTAL_MKT_CAP_USD).toFixed(2))}</div>
     </div>
   );
 };

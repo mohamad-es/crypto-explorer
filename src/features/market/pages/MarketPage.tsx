@@ -8,10 +8,12 @@ import RenderState from "@/utils/RenderState";
 import { useState } from "react";
 
 const MarketPage = () => {
+  const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
   const [params, setParams] = useState<TTopListParams>({
     page: 1,
     page_size: 10,
-    groups: "BASIC,PRICE,CHANGE,MKT_CAP,VOLUME",
+    groups: "ID,BASIC,SUPPLY,PRICE,MKT_CAP,VOLUME,CHANGE,TOPLIST_RANK",
     sort_by: "CIRCULATING_MKT_CAP_USD",
     sort_direction: "DESC",
   });
@@ -29,7 +31,7 @@ const MarketPage = () => {
         isPending={isPending}
         error={error}
         data={data}
-        loadingRender={<CryptoRowCardSkeleton count={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />}
+        loadingRender={<CryptoRowCardSkeleton count={skeleton} />}
       >
         <Search params={searchParams} setParams={setSearchParams} />
         <CryptoRowCard cryptoData={data?.Data.LIST} />
