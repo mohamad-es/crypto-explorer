@@ -7,6 +7,7 @@ interface ImportMetaEnv {
   readonly VITE_TOP_LIST_URL: string;
   readonly VITE_TOP_LIST_SEARCH: string;
   readonly VITE_HISTORICAL_SOCIAL: string;
+  readonly VITE_CHART_URL: string;
 }
 
 interface ImportMeta {

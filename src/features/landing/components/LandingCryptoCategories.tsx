@@ -12,7 +12,7 @@ const LandingCryptoCategories = () => {
   const [params, setParams] = useState<TTopListParams>({
     page: 1,
     page_size: 10,
-    groups: "BASIC,PRICE,CHANGE,MKT_CAP,VOLUME",
+    groups: "ID,BASIC,PRICE,CHANGE,MKT_CAP,VOLUME",
     sort_by: "CIRCULATING_MKT_CAP_USD",
     sort_direction: "DESC",
   });

@@ -10,7 +10,7 @@ const LandingTrendCryptos = () => {
       assets: "BTC,ETH,XRP,USDT",
       quote_asset: "USD",
       asset_lookup_priority: "SYMBOL",
-      groups: "BASIC,PRICE,CHANGE",
+      groups: "ID,BASIC,PRICE,CHANGE",
     },
   });
 
