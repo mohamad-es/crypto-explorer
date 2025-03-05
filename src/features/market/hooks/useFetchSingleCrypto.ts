@@ -4,7 +4,7 @@ import { TMetaDataParams, TMetaDataResponse, TResponse } from "@/types/response"
 
 export const useFetchSingleCrypto = (crypot_id: string) => {
   const params: TMetaDataParams = {
-    assets: crypot_id,
+    asset: crypot_id,
     groups: "ID",
   };
 
