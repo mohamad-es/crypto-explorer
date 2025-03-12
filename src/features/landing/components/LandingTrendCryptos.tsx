@@ -26,7 +26,7 @@ const LandingTrendCryptos = () => {
         <div className={"grid grid-cols-4 gap-7"}>
           {data &&
             Object.entries(data.Data).map(([key, value]) => (
-              <CryptoColumnCard key={key} cryptoName={key} data={value} />
+              <CryptoColumnCard link={key} key={key} cryptoName={key} data={value} />
             ))}
         </div>
       </RenderState>

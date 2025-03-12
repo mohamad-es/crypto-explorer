@@ -1,15 +1,20 @@
 import { ArrowDown02Icon, ArrowUp02Icon, ArrowUpRight01Icon } from "hugeicons-react";
 import { TCryptoResponse } from "@/types/response.ts";
 import { formatLargeNumber } from "@/utils/formatLargeNumbers";
+import { useNavigate } from "react-router";
 
 type CryptoColumnCardProps = {
   cryptoName: string;
   data: TCryptoResponse;
+  link: string;
 };
 
-const CryptoColumnCard = ({ data, cryptoName }: CryptoColumnCardProps) => {
+const CryptoColumnCard = ({ data, cryptoName, link }: CryptoColumnCardProps) => {
+  const navigate = useNavigate();
+
   return (
     <div
+      onClick={() => navigate(`/market/${link}`)}
       className={
         "rounded-2xl py-3 flex flex-col border border-light-grey bg-white dark:text-light-title dark:bg-main/20 dark:border-light-grey/5 cursor-pointer transition-all hover:shadow-xl"
       }

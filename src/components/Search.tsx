@@ -29,12 +29,12 @@ const Search = ({ params, setParams }: SearchProps) => {
       >
         <div
           className={
-            "bg-white border border-light-grey flex text-grey-subtitle items-center w-full gap-4 rounded-lg p-2.5"
+            "bg-white border border-light-grey flex text-grey-subtitle items-center w-full gap-4 rounded-lg p-2.5 dark:bg-main/70 dark:border-white/15 dark:text-white/80"
           }
         >
           <Search01Icon />
           <input
-            className={"w-full"}
+            className={"w-full dark:placeholder:text-white/80"}
             placeholder={"Search coin"}
             value={params.search_string}
             onChange={(e) => setParams({ ...params, search_string: e.target.value })}

@@ -9,10 +9,6 @@ const SingleCryptoPage = () => {
 
   const { data, error, isPending } = useFetchSingleCrypto(params.crypto_id!);
 
-  console.log(params.crypto_id);
-  
-
-
   return (
     <RenderState data={data} isPending={isPending} error={error}>
       <SingleCryptoHero data={data?.Data} />

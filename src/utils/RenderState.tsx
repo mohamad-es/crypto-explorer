@@ -8,9 +8,9 @@ type RenderStateProps<T> = PropsWithChildren<{
 }>;
 
 const RenderState = <T,>({ isPending, error, data, children, loadingRender }: RenderStateProps<T>) => {
-  if (isPending) return loadingRender ? loadingRender : <div>Loading ...</div>;
+  if (isPending) return loadingRender ? loadingRender : <div className="dark:text-light-subtitle">Loading ...</div>;
   if (error) return <div>{error.message}</div>;
-  if (!data) return <div>No data to show</div>;
+  if (!data) return <div className="dark:text-light-subtitle">No data to show</div>;
 
   return children;
 };
