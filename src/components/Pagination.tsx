@@ -10,6 +10,7 @@ type PaginationProps = {
 const Pagination = ({ setParams, params, total_assets }: PaginationProps) => {
   // const pageSize = [10, 20, 30, 40, 50];
   const pageNumber = [1, 2, 3, 4, 5];
+  
 
   return (
     <div className="flex justify-between">
