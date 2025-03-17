@@ -91,11 +91,10 @@ type TTopListResponse = {
 };
 
 type TMetaDataParams = {
-  market: string;
-  instrument: string;
   groups?: string;
   asset_lookup_priority?: string;
   quote_asset?: string;
+  assets: string;
 };
 
 type TTopListParams = {

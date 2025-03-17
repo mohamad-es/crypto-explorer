@@ -36,7 +36,7 @@ const MarketPage = () => {
         <Search params={searchParams} setParams={setSearchParams} />
         <CryptoRowCard cryptoData={data?.Data.LIST} />
       </RenderState>
-      <Pagination setParams={setParams} params={params} />
+      <Pagination total_assets={10} setParams={setParams} params={params} />
     </div>
   );
 };
