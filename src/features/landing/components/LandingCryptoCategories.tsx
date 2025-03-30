@@ -48,7 +48,12 @@ const LandingCryptoCategories = () => {
         })}
       </div>
 
-      <RenderState isPending={isPending} error={error} data={data} loadingRender={<CryptoRowCardSkeleton count={[1,2,3,4,5,6,7,8,9,10]} />}>
+      <RenderState
+        isPending={isPending}
+        error={error}
+        data={data}
+        loadingRender={<CryptoRowCardSkeleton count={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />}
+      >
         {data && <CryptoRowCard cryptoData={data.Data.LIST} />}
       </RenderState>
 

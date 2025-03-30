@@ -21,7 +21,7 @@ const SingleCryptoPage = () => {
       const message = {
         action: "SUBSCRIBE",
         type: "index_cc_v1_latest_tick",
-        groups: ["VALUE", "CURRENT_HOUR"],
+        groups: ["VALUE", "CURRENT_HOUR", "ID", "CURRENT_DAY", "CURRENT_WEEK", "CURRENT_MONTH", "CURRENT_YEAR"],
         market: "cadli",
         instruments: [`${params.crypto_id}-USD`],
       };
@@ -51,7 +51,7 @@ const SingleCryptoPage = () => {
   return (
     <RenderState data={data} isPending={isPending} error={error}>
       {price && <SingleCryptoHero price={price} data={data?.Data[params.crypto_id]} />}
-      <CryptoPriceChart  />
+      <CryptoPriceChart />
     </RenderState>
   );
 };

@@ -1,10 +1,7 @@
+import FavoriteCryptosList from "../components/FavoriteCryptosList";
 
 const FavoritesPage = () => {
-    return (
-        <div>
-            WatchListPage
-        </div>
-    );
+  return <FavoriteCryptosList />;
 };
 
 export default FavoritesPage;
